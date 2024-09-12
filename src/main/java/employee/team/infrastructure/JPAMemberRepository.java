@@ -13,7 +13,7 @@ public class JPAMemberRepository implements MemberRepository {
 
     @Override
     public Member save(Member member) {
-        MemberEntity entity = new MemberEntity(member.getId().uuid(), member.getName(), member.getSurname(), member.getEmail().email(), member.getSalary(), member.getCurrency().getCurrencyCode());
+        MemberEntity entity = new MemberEntity(member.getId().uuid(), member.getName(), member.getSurname(), member.getEmail().email(), member.getSalary(), member.getCurrency().getCurrencyCode(), member.isAdmin());
         memberEntityRepository.save(entity);
         return member;
     }

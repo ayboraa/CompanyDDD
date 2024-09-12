@@ -1,5 +1,7 @@
 package employee.team.domain;
 
+import employee.common.domain.Email;
+import employee.common.domain.MemberId;
 import org.springframework.util.Assert;
 
 import java.util.Currency;
@@ -11,14 +13,16 @@ public class Member {
     private Email email;
     private float salary;
     private Currency currency;
+    private boolean isAdmin;
 
 
-    public Member(String name, String surname, Email email, float salary, Currency currency) {
+    public Member(String name, String surname, Email email, float salary, Currency currency, boolean isAdmin) {
         Assert.notNull(email, "Email cannot be null");
         Assert.notNull(salary, "Salary cannot be null");
         Assert.notNull(currency, "Currency cannot be null");
         Assert.notNull(name, "Name cannot be null");
         Assert.notNull(surname, "Surname cannot be null");
+        Assert.notNull(isAdmin, "Admin status cannot be null");
 
         this.id = new MemberId();
         this.name = name;
@@ -26,6 +30,8 @@ public class Member {
         this.email = email;
         this.salary = salary;
         this.currency = currency;
+        this.isAdmin = isAdmin;
+
     }
 
     public MemberId getId() {
@@ -50,6 +56,10 @@ public class Member {
 
     public String getSurname() {
         return surname;
+    }
+
+    public boolean isAdmin() {
+        return isAdmin;
     }
 
 

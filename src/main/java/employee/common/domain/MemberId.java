@@ -1,4 +1,4 @@
-package employee.team.domain;
+package employee.common.domain;
 
 import org.springframework.util.Assert;
 

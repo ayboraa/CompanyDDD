@@ -15,17 +15,19 @@ public class MemberEntity {
     private String email;
     private float salary;
     private String currency;
+    private boolean isAdmin;
 
     public MemberEntity() {
     }
 
-    public MemberEntity(UUID id, String firstName, String lastName, String email, float salary, String currency) {
+    public MemberEntity(UUID id, String firstName, String lastName, String email, float salary, String currency, boolean isAdmin) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.salary = salary;
         this.currency = currency;
+        this.isAdmin = isAdmin;
     }
 
     public UUID getId() {
@@ -69,6 +71,13 @@ public class MemberEntity {
     }
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public boolean isAdmin() {
+        return isAdmin;
+    }
+    public void setAdmin(boolean admin) {
+        this.isAdmin = admin;
     }
 
 
